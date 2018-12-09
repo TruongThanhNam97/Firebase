@@ -25,6 +25,10 @@ class Table extends Component {
       })
     })
   }
+  eventDelete=(value)=>{
+    this.props.deleteData(value.id);
+    this.props.alertOn("danger","Xóa "+value.name+" thành công");
+  } 
   displayData=()=>{
     if (this.props.search)
     {
@@ -66,7 +70,7 @@ class Table extends Component {
                         <div className="fa fa-wrench" />
                         Sửa
                       </div>
-                      <div className="btn btn-danger" onClick={()=>this.props.deleteData(value.id)} >
+                      <div className="btn btn-danger" onClick={()=>this.eventDelete(value)} >
                         <div className="fa fa-ban" />
                         Xóa
                       </div>
@@ -109,6 +113,11 @@ const mapDispatchToProps = dispatch => {
         deleteData : (id) => {
           dispatch({
             type : "deleteData",id
+          })
+        },
+        alertOn : (typeAlert,contentAlert) => {
+          dispatch({
+            type : "alertOn",typeAlert,contentAlert
           })
         }
     }

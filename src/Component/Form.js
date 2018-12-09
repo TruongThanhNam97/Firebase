@@ -23,7 +23,8 @@ class Form extends Component {
       var item = {};
       item.name = this.state.name;
       item.tel = this.state.tel;
-      this.props.addData(item); 
+      this.props.addData(item);
+      this.props.alertOn("success","Thêm "+item.name+" thành công");
     }
     this.setState({
       id : null,
@@ -60,6 +61,7 @@ class Form extends Component {
         item.tel = this.state.tel;
       }
       this.props.editData(item);
+      this.props.alertOn("warning","Sửa phần tử thành công");
     }
     this.setState({
       id : null,
@@ -131,6 +133,11 @@ const mapDispatchToProps = dispatch => {
     editData : (item) => {
       dispatch({
         type : "editData",item
+      })
+    },
+    alertOn : (typeAlert,contentAlert) => {
+      dispatch({
+        type : "alertOn",typeAlert,contentAlert
       })
     }
   }

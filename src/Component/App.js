@@ -4,11 +4,13 @@ import Header from './Header';
 import Search from './Search';
 import Table from './Table';
 import Form from './Form';
+import Noti from './Noti';
 
 class App extends Component {
   render() {
     return (
       <div>
+      <Noti></Noti>
       <Header></Header>
   {/* Start HTML SearchForm */}
   <div className="searchForm">

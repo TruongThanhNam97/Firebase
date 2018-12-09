@@ -2,7 +2,10 @@ import firebase from "./Firebase";
 var redux = require("redux");
 var oldState = {
     selected : null,
-    search : null
+    search : null,
+    statusAlert : false,
+    typeAlert : null,
+    contentAlert : null
 }
 var allReducers = (state = oldState , action) => {
     switch (action.type) {
@@ -22,6 +25,10 @@ var allReducers = (state = oldState , action) => {
         return {...state};
         case "search" :
         return {...state,search : action.search};
+        case "alertOn" :
+        return {...state,statusAlert : true,typeAlert : action.typeAlert,contentAlert:action.contentAlert};
+        case "alertOff" :
+        return {...state,statusAlert : false};
         default:
             return state
     }
