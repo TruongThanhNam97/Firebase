@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/realtimeFirebase/precache-manifest.fa7bc60f786ba1993a7e6001634e7f0b.js"
+  "/Firebase/precache-manifest.004c0b5e536695d108ad20bb1914eb8d.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/realtimeFirebase/index.html", {
+workbox.routing.registerNavigationRoute("/Firebase/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
