@@ -73,6 +73,7 @@ class Form extends Component {
     if (this.props.selected)
     {
         return (
+ 
           <form>
           <div className="form-group">
             <input defaultValue={this.props.selected.name} onChange={(event)=>this.isChange(event)} type="text" className="form-control" name="name"  aria-describedby="helpId" placeholder="Nhập tên" />
@@ -85,6 +86,7 @@ class Form extends Component {
             <input onClick={()=>this.eventEdit()} type="reset" value="Edit" className="btn btn-secondary btn-block" />
           </div>
         </form>
+
         );
     }
     else
@@ -107,7 +109,7 @@ class Form extends Component {
   }   
     render() {
         return (
-            <div className="col-3">
+            <div className="col-md-3">
             <div className="card">
               <div className="card-header">
                 Form thông tin

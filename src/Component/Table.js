@@ -83,7 +83,7 @@ class Table extends Component {
   } 
     render() {
         return (
-            <div className="col-9">
+            <div className="col-md-9">
             <table className="table table-striped table-hover">
               <thead>
                 <tr>
